@@ -1,0 +1,48 @@
+#查找最晚入职的员工
+SELECT *
+FROM employess
+WHERE hire_date=(SELECT) MAX(hire_date)
+                 FROM employess
+                 );
+
+#查询年龄大于20的总数
+SELECT COUNT(*)
+FROM student
+WHERE age>20;
+
+#查询数学成绩总分
+SELECT SUM(math) 总分
+FROM student;
+
+#按照性别进行分组，求男生和女生数学的平均分
+SELECT sex,AVG(math)
+FROM student3
+GROUP BY sex;
+
+#查询年龄大于25岁的人，按性别分组，统计每组的人数
+#先过滤掉年龄小于25岁的人，再分组，最后统计每组的人数
+SELECT sex,COUNT(*)
+FROM student3
+WHERE age>25
+GROUP BY sex;
+
+
+#查询年龄大于25岁的人，按性别分组，统计每组人数，并只显示性别人数大于2的数据
+SELECT sex,COUNT(*)
+WHERE age>25
+GROUP BY sex HAVING COUNT(*)>2;
+
+
+#内链接
+SELECT
+    t1.name,
+    t1.gender,
+    t2.name
+FROM
+    emp t1,
+    dept t2
+WHERE
+    t1.'dept_id' = t2.'id';
+
+
+

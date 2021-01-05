@@ -3,7 +3,7 @@ package List;
 public class ListNode {
     public ListNode next;
 
-    int val;
+    public int val;
 
-    ListNode(int x){val=x;}
+    public ListNode(int x){val=x;}
 }
